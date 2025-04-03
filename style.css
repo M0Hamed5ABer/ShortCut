@@ -1,0 +1,243 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+:root {
+  /* main */
+  --main_clr: #fff;
+
+  /* text */
+  --text_clr: #000;
+  --text_clr_2: #fff;
+  --menu_clr: #ffbf00;
+  --menu_hover_clr: #ffd043;
+  --link_clr: #3030db;
+  --link_active_clr: #8585d6;
+
+  /* icon */
+  --icon_clr: #000000;
+  --icon_hover_clr: #eee;
+  --icon_active_clr: #1f1717;
+}
+* {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  box-sizing: border-box;
+}
+html {
+  font-family: poppins, "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.5rem;
+}
+body {
+  min-height: 100vh;
+  min-height: 100dvh;
+  background-color: var(--main_clr);
+  color: var(--text_clr);
+  /* display: grid;
+  grid-template-columns: auto 1fr; */
+}
+
+/* header */
+header {
+  display: flex;
+  position: fixed;
+  top: 0;
+  left: 0;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  align-items: center;
+  background-color: var(--main_clr);
+  padding: 15px;
+  z-index: 999;
+}
+/* sidebar */
+.sidebar {
+  display: none;
+}
+
+.sidebar a {
+  font-size: 1.2rem;
+  color: var(--icon_clr);
+}
+.back_btn {
+  display: none;
+}
+.back_btn a {
+  font-size: 1.2rem;
+  color: var(--icon_clr);
+}
+/* logo */
+header .logo {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  cursor: pointer;
+}
+header .logo i {
+  font-size: 1.5rem;
+  color: var(--menu_clr);
+}
+header .logo h1 {
+  font-size: 1.5rem;
+  color: var(--text_clr);
+}
+header h2 {
+  font-size: 1.2rem;
+  color: var(--text_clr);
+}
+/* ul */
+header .categorys {
+  position: relative;
+  display: flex;
+  gap: 10px;
+}
+header .categorys li {
+  list-style: none;
+  position: relative;
+  float: left;
+  margin: 5px;
+}
+header .categorys li a {
+  display: flex;
+  text-decoration: none;
+  color: var(--text_clr);
+  background-color: transparent;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  font-size: 1rem;
+  font-weight: 500;
+  padding: 5px 10px;
+  border-radius: 15px;
+}
+header .categorys li a:hover {
+  background-color: var(--icon_hover_clr);
+  border-radius: 0;
+  transition: 10ms;
+  .fa-solid {
+    rotate: 180deg;
+  }
+}
+
+/* elements */
+header .categorys li .elements {
+  display: flex;
+  flex-direction: column;
+  min-width: 220px;
+  visibility: hidden;
+  position: absolute;
+  background-color: var(--menu_clr);
+  left: 0;
+  border-top: 10px solid var(--main_clr);
+}
+header .categorys li:hover > .elements {
+  visibility: visible;
+}
+
+header .elements li a:hover {
+  background-color: var(--menu_hover_clr);
+  color: var(--text_clr_2);
+  .fa-solid {
+    rotate: -90deg;
+    transition: 150ms ease;
+  }
+}
+/* nested elements */
+header .categorys li .nested_elements {
+  display: flex;
+  flex-direction: column;
+  min-width: 220px;
+  visibility: hidden;
+  position: absolute;
+  background-color: var(--menu_clr);
+  left: 210px;
+  top: 0;
+}
+header .categorys li:hover > .nested_elements {
+  visibility: visible;
+}
+/* nav */
+header nav {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 15px;
+}
+header nav a {
+  font-size: 1.2rem;
+  color: var(--icon_clr);
+}
+
+/* main */
+main{
+    padding-top: 60px;
+}
+
+/* pages */
+main section {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+main section h1 {
+    font-size: 1.5rem;
+    color: var(--text_clr);
+}
+main section .title {
+    font-size: 1.5rem;
+    color: var(--text_clr);
+    padding: 0 0 15px 15px;
+}
+main section .shortcut{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--main_clr);
+    box-shadow: 0 2px 5px var(--icon_clr);
+    padding: 10px 15px;
+    gap: 1px;
+}
+main section .shortcut h2{
+    font-size: 1.2rem;
+    color: var(--text_clr);
+}
+main section .shortcut a{
+    font-size: 1rem;
+    color: var(--link_clr);
+}
+main section .shortcut a:active{
+    font-size: 1rem;
+    color: var(--link_active_clr);
+}
+main section .shortcut:hover{
+    background-color: var(--menu_hover_clr);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* responsive */
+
+@media (max-width: 655px) {
+  .sidebar {
+    display: block;
+  }
+  .back_btn {
+    display: block;
+  }
+  header .categorys {
+    display: none;
+  }
+}
