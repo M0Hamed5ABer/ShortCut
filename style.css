@@ -448,9 +448,9 @@ header nav a {
 /* responsive */
 
 @media (max-width: 655px) {
-  .sidebar {
+/*   .sidebar {
     display: block;
-  }
+  } */
   .back_btn {
     display: block;
   }
