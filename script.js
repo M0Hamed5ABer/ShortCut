@@ -59,7 +59,7 @@ mainPage.addEventListener("touchend", (e) => {
 });
 
 function handleSwipe() {
-  const threshold = 50; // أقل مسافة سحب مطلوبة
+  const threshold = 100; // أقل مسافة سحب مطلوبة
 
   if (startX - endX > threshold && currentIndex < sections.length - 1) {
     // سحب لليسار

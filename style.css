@@ -32,8 +32,6 @@ body {
   min-height: 100dvh;
   background-color: var(--main_clr);
   color: var(--text_clr);
-  /* display: grid;
-  grid-template-columns: auto 1fr; */
   overflow-x: hidden;
 }
 
@@ -162,6 +160,7 @@ header nav a {
   font-size: 1.2rem;
   color: var(--icon_clr);
 }
+
 /******** sidebar ***********/
 .open-btn {
   display: none;
@@ -173,26 +172,22 @@ header nav a {
   border-radius: 5px;
 }
 
-/* الـ sidebar نفسه */
 .sidebar {
   position: fixed;
   top: 0;
-  right: -250px; /* مخفي */
+  right: -250px; 
   width: 250px;
   height: 100%;
-  background-color: #333;
-  color: white;
+  background-color: var(--menu_clr);
+  color: var(--main_clr);
   padding: 20px;
   transition: right 0.3s ease;
   z-index: 1002;
 }
 
-/* عند الفتح */
 .sidebar.active {
   left: 0;
 }
-
-/* خلفية شفافة تغلق الـ sidebar عند الضغط عليها */
 .overlay {
   position: fixed;
   top: 0;
@@ -244,6 +239,9 @@ header nav a {
   height: 0;
   overflow-y: scroll;
 }
+.sidebar .categorys li .elements::-webkit-scrollbar {
+  overflow: hidden;
+}
 .sidebar .categorys li:hover > .elements {
   visibility: visible;
   height: 200px;
@@ -275,7 +273,7 @@ header nav a {
 
 /* main */
 .main_page {
-  width: 100%;
+  width: 100vw;
   height: 100vh;
 }
 
@@ -321,9 +319,13 @@ header nav a {
 }
 .categories {
   display: flex;
+  overflow-y: scroll;
   gap: 20px;
   flex-wrap: wrap;
   text-align: center;
+}
+.categories::-webkit-scrollbar {
+  overflow: hidden;
 }
 .category-card {
   background-color: #000;
@@ -444,12 +446,13 @@ header nav a {
 /* responsive */
 
 @media (max-width: 768px) {
-  .sidebar {
+  .sidebar,
+  .back_btn,
+  .open-btn {
     display: block;
   }
-  .back_btn {
-    display: block;
-  }
+  #nextBtn,
+  #prevBtn,
   header .categorys {
     display: none;
   }
@@ -461,15 +464,5 @@ header nav a {
   .shortcut_page .shortcut_stn .shortcut {
     width: 100%;
     padding: 10px 15px;
-  }
-  .hero {
-    padding: 850px 50px 50px;
-  }
-  .open-btn {
-    display: block;
-  }
-  #nextBtn,
-  #prevBtn {
-    display: none;
   }
 }
