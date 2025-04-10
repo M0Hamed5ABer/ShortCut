@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="logo.ico" type="image/x-icon" />
     <link rel="stylesheet" href="style.css" />
     <link
       rel="stylesheet"
@@ -12,9 +13,10 @@
   </head>
   <body>
     <header>
-      <div class="sidebar">
-        <a href="#"><i class="fa-solid fa-bars"></i></a>
-      </div>
+      <button class="open-btn" onclick="openSidebar()">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+
       <a href="#" class="logo">
         <i class="fa-solid fa-bolt"></i>
         <h1>ShortCut</h1>
@@ -67,7 +69,9 @@
                 <li><a href="pages/Coming_soon.html">SAFE</a></li>
                 <li><a href="pages/Coming_soon.html">SAP2000</a></li>
                 <li><a href="pages/Coming_soon.html">DIALux</a></li>
-                <li><a href="pages/Coming_soon.html">Green Building Studio</a></li>
+                <li>
+                  <a href="pages/Coming_soon.html">Green Building Studio</a>
+                </li>
               </ul>
             </li>
             <li>
@@ -158,14 +162,15 @@
         <a href="#"><i class="fa-solid fa-user"></i></a>
       </nav>
     </header>
-    <aside class="sidebar">
+    <aside class="sidebar" id="sidebar">
       <ul class="categorys">
         <!-- general  -->
         <li>
           <a href="#">General<i class="fa-solid fa-caret-down"></i></a>
           <ul class="elements">
             <li>
-              <a href="pages/Windows.html">Windows<i class="fa-solid fa-caret-down"></i></a>
+              <a href="Windows.html"
+                >Window</a>
             </li>
           </ul>
         </li>
@@ -206,7 +211,9 @@
                 <li><a href="pages/Coming_soon.html">SAFE</a></li>
                 <li><a href="pages/Coming_soon.html">SAP2000</a></li>
                 <li><a href="pages/Coming_soon.html">DIALux</a></li>
-                <li><a href="pages/Coming_soon.html">Green Building Studio</a></li>
+                <li>
+                  <a href="pages/Coming_soon.html">Green Building Studio</a>
+                </li>
               </ul>
             </li>
             <li>
@@ -293,13 +300,13 @@
         </li>
       </ul>
     </aside>
+    <div class="overlay" id="overlay" onclick="closeSidebar()">d</div>
     <div class="nav-buttons">
-        <button id="prevBtn"></button>
-        <button id="nextBtn"></button>
-      </div>
+      <button id="prevBtn"><i class="fa-solid fa-caret-left"></i></button>
+      <button id="nextBtn"><i class="fa-solid fa-caret-right"></i></button>
+    </div>
     <!-- main -->
     <main class="main_page">
-            
       <section class="card">
         <div class="hero" style="background-image: url('windows.webp')">
           <div class="categories">

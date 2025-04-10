@@ -2,7 +2,7 @@
 :root {
   /* main */
   --main_clr: #fff;
-/* #a52a2a */
+  /* #a52a2a */
   /* text */
   --text_clr: #000;
   --text_clr_2: #fff;
@@ -30,7 +30,6 @@ html {
 body {
   min-height: 100vh;
   min-height: 100dvh;
-  /* background-color: var(--main_clr); */
   background-color: var(--main_clr);
   color: var(--text_clr);
   /* display: grid;
@@ -164,17 +163,50 @@ header nav a {
   color: var(--icon_clr);
 }
 /******** sidebar ***********/
-.sidebar {
+.open-btn {
   display: none;
+  padding: 10px 15px;
+  background-color: transparent;
+  color: var(--icon_clr);
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+/* الـ sidebar نفسه */
+.sidebar {
+  position: fixed;
+  top: 0;
+  right: -250px; /* مخفي */
+  width: 250px;
+  height: 100%;
+  background-color: #333;
+  color: white;
+  padding: 20px;
+  transition: right 0.3s ease;
+  z-index: 1002;
+}
+
+/* عند الفتح */
+.sidebar.active {
+  left: 0;
+}
+
+/* خلفية شفافة تغلق الـ sidebar عند الضغط عليها */
+.overlay {
   position: fixed;
   top: 0;
   left: 0;
-  background-color: #ffd043;
-  z-index: 999;
-  overflow-y: scroll;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: none;
+  z-index: 1000;
 }
-/* ul */
+
+.overlay.active {
+  display: block;
+}
 .sidebar .categorys {
   display: flex;
   flex-direction: column;
@@ -257,6 +289,7 @@ header nav a {
   background-position: center;
   color: white;
   padding: 100px 50px 50px;
+  width: 100vw;
   height: 100vh;
   position: relative;
   transition: background-image 0.5s ease-in-out;
@@ -369,48 +402,6 @@ header nav a {
   background-color: var(--menu_hover_clr);
 }
 
-
-
-
-
-
-
-
-
-
-
-/* responsive */
-
-@media (max-width: 655px) {
-  /* .sidebar {
-    display: block;
-  } */
-  .back_btn {
-    display: block;
-  }
-  header .categorys {
-    display: none;
-  }
-  .shortcut_page {
-    padding-top: 60px;
-    width: 100%;
-    margin: 0;
-  }
-  .shortcut_page section .shortcut {
-    padding: 10px 15px;
-  }
-}
-
-
-
-
-
-
-
-
-
-
-
 .main_page {
   display: flex;
   flex-direction: row;
@@ -426,22 +417,59 @@ header nav a {
 
 .nav-buttons {
   position: fixed;
-  bottom: 20px;
+  bottom: 30%;
   left: 50%;
   transform: translateX(-50%);
   z-index: 10;
   display: flex;
-  gap: 10px;
+  justify-content: space-between;
+  width: 100%;
 }
 
 .nav-buttons button {
-  width: 60px;
-  height: 20px;
+  font-size: 1.2rem;
+  color: var(--main_clr);
+  margin: 0 20px;
+  width: 50px;
+  height: 50px;
   cursor: pointer;
   border: none;
-  background-color: #eee;
-  border-radius: 25px;
+  background-color: var(--menu_clr);
+  border-radius: 50%;
 }
 .nav-buttons button:active {
   background-color: var(--menu_hover_clr);
+}
+
+/* responsive */
+
+@media (max-width: 768px) {
+  .sidebar {
+    display: block;
+  }
+  .back_btn {
+    display: block;
+  }
+  header .categorys {
+    display: none;
+  }
+  .shortcut_page {
+    padding-top: 60px;
+    width: 100%;
+    margin: 0;
+  }
+  .shortcut_page .shortcut_stn .shortcut {
+    width: 100%;
+    padding: 10px 15px;
+  }
+  .hero {
+    padding: 850px 50px 50px;
+  }
+  .open-btn {
+    display: block;
+  }
+  #nextBtn,
+  #prevBtn {
+    display: none;
+  }
 }
