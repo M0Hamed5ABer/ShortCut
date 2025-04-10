@@ -59,7 +59,7 @@ mainPage.addEventListener("touchend", (e) => {
 });
 
 function handleSwipe() {
-  const threshold = 100; // أقل مسافة سحب مطلوبة
+  const threshold = 80; // أقل مسافة سحب مطلوبة
 
   if (startX - endX > threshold && currentIndex < sections.length - 1) {
     // سحب لليسار
@@ -84,4 +84,40 @@ function openSidebar() {
 function closeSidebar() {
   sidebar.classList.remove("active");
   overlay.classList.remove("active");
+
+  document.querySelectorAll(".sidebar li.show").forEach((li) => {
+    li.classList.remove("show");
+  });
 }
+
+function toggleSubMenu(a) {
+  const parentLi = a.closest("li");
+  parentLi.classList.toggle("show");
+}
+
+/***** Dark mode toggle *****/
+document.addEventListener("DOMContentLoaded", () => {
+  const enableDarkMode = () => {
+    document.body.classList.add("dark-mode");
+    localStorage.setItem("darkMode", "enabled");
+  };
+
+  const disableDarkMode = () => {
+    document.body.classList.remove("dark-mode");
+    localStorage.setItem("darkMode", "disabled");
+  };
+
+  // Check for dark mode preference in local storage
+  if (localStorage.getItem("darkMode") === "enabled") {
+    enableDarkMode();
+  }
+
+  // Toggle dark mode on button click
+  document.getElementById("toggle-dark-mode").addEventListener("click", () => {
+    if (document.body.classList.contains("dark-mode")) {
+      disableDarkMode();
+    } else {
+      enableDarkMode();
+    }
+  });
+});
