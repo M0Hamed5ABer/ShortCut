@@ -115,8 +115,7 @@ header .logo h2 {
   font-size: 1.3rem;
   color: var(--text_clr);
 }
-header .back_btn {
-  display: none;
+header a{
   font-size: 1.2rem;
   color: var(--icon_clr);
 }
@@ -454,7 +453,6 @@ header .categorys li:hover > .nested_elements {
 
 @media (max-width: 768px) {
   .sidebar,
-  .back_btn,
   .open-btn {
     display: block;
   }
