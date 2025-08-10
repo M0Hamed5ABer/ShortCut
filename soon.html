@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Soon</title>
+    <link rel="icon" href="flash.ico" type="image/x-icon" />
+
+  <style>
+    /* تخصيص صفحة قادم قريبًا */
+    .coming-soon {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      background-color: var(--main_clr);
+      color: var(--text_clr);
+    }
+    .coming-soon h1 {
+      font-size: 1.8rem;
+      margin-bottom: 15px;
+      color: var(--menu_clr);
+    }
+    .coming-soon p {
+      font-size: 1.2rem;
+      margin-bottom: 25px;
+    }
+    .coming-soon .loader {
+      border: 6px solid #f3f3f3;
+      border-top: 6px solid var(--menu_clr);
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+      animation: spin 1.5s linear infinite;
+    }
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="coming-soon">
+    <h1>🚧 الصفحة تحت الإنشاء</h1>
+    <p>نحن نعمل على شيء رائع! ترقبونا قريبًا...</p>
+    <div class="loader"></div>
+  </div>
+  
+</body>
+</html>

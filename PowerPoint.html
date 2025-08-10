@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PowerPoint Shortcuts</title>
+<link rel="stylesheet" href="style.css">
+<link rel="icon" href="flash.ico" type="image/x-icon" />
+</head>
+<body>
+<h1>PowerPoint Shortcuts</h1>
+
+<input type="text" id="shortcutSearch" placeholder="Search for a shortcut...">
+
+<table id="shortcutsTable" border="1" style="border-collapse: collapse; width: 100%; text-align: left;">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Shortcut</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <!-- 1 -->
+    <tr data-keywords="new presentation slide">
+      <td>1</td>
+      <td>Ctrl + N</td>
+      <td>Create a new presentation</td>
+    </tr>
+    <!-- 2 -->
+    <tr data-keywords="open presentation file">
+      <td>2</td>
+      <td>Ctrl + O</td>
+      <td>Open an existing presentation</td>
+    </tr>
+    <!-- 3 -->
+    <tr data-keywords="save presentation file">
+      <td>3</td>
+      <td>Ctrl + S</td>
+      <td>Save the presentation</td>
+    </tr>
+    <!-- 4 -->
+    <tr data-keywords="save as copy duplicate">
+      <td>4</td>
+      <td>F12</td>
+      <td>Save As</td>
+    </tr>
+    <!-- 5 -->
+    <tr data-keywords="print document slides">
+      <td>5</td>
+      <td>Ctrl + P</td>
+      <td>Print presentation</td>
+    </tr>
+    <!-- 6 -->
+    <tr data-keywords="undo last action">
+      <td>6</td>
+      <td>Ctrl + Z</td>
+      <td>Undo</td>
+    </tr>
+    <!-- 7 -->
+    <tr data-keywords="redo repeat last">
+      <td>7</td>
+      <td>Ctrl + Y</td>
+      <td>Redo</td>
+    </tr>
+    <!-- 8 -->
+    <tr data-keywords="cut remove">
+      <td>8</td>
+      <td>Ctrl + X</td>
+      <td>Cut</td>
+    </tr>
+    <!-- 9 -->
+    <tr data-keywords="copy duplicate">
+      <td>9</td>
+      <td>Ctrl + C</td>
+      <td>Copy</td>
+    </tr>
+    <!-- 10 -->
+    <tr data-keywords="paste insert">
+      <td>10</td>
+      <td>Ctrl + V</td>
+      <td>Paste</td>
+    </tr>
+    <!-- 11 -->
+    <tr data-keywords="select all slides text">
+      <td>11</td>
+      <td>Ctrl + A</td>
+      <td>Select all</td>
+    </tr>
+    <!-- 12 -->
+    <tr data-keywords="find search">
+      <td>12</td>
+      <td>Ctrl + F</td>
+      <td>Find</td>
+    </tr>
+    <!-- 13 -->
+    <tr data-keywords="replace text">
+      <td>13</td>
+      <td>Ctrl + H</td>
+      <td>Replace</td>
+    </tr>
+    <!-- 14 -->
+    <tr data-keywords="new slide insert slide">
+      <td>14</td>
+      <td>Ctrl + M</td>
+      <td>New slide</td>
+    </tr>
+    <!-- 15 -->
+    <tr data-keywords="duplicate slide">
+      <td>15</td>
+      <td>Ctrl + D</td>
+      <td>Duplicate selected slide</td>
+    </tr>
+    <!-- 16 -->
+    <tr data-keywords="start slideshow">
+      <td>16</td>
+      <td>F5</td>
+      <td>Start slideshow from beginning</td>
+    </tr>
+    <!-- 17 -->
+    <tr data-keywords="slideshow from current slide">
+      <td>17</td>
+      <td>Shift + F5</td>
+      <td>Start slideshow from current slide</td>
+    </tr>
+    <!-- 18 -->
+    <tr data-keywords="end slideshow">
+      <td>18</td>
+      <td>Esc</td>
+      <td>End slideshow</td>
+    </tr>
+    <!-- 19 -->
+    <tr data-keywords="bold text">
+      <td>19</td>
+      <td>Ctrl + B</td>
+      <td>Bold</td>
+    </tr>
+    <!-- 20 -->
+    <tr data-keywords="italic text">
+      <td>20</td>
+      <td>Ctrl + I</td>
+      <td>Italic</td>
+    </tr>
+    <!-- 21 -->
+    <tr data-keywords="underline text">
+      <td>21</td>
+      <td>Ctrl + U</td>
+      <td>Underline</td>
+    </tr>
+    <!-- 22 -->
+    <tr data-keywords="align center">
+      <td>22</td>
+      <td>Ctrl + E</td>
+      <td>Center align</td>
+    </tr>
+    <!-- 23 -->
+    <tr data-keywords="align left">
+      <td>23</td>
+      <td>Ctrl + L</td>
+      <td>Align left</td>
+    </tr>
+    <!-- 24 -->
+    <tr data-keywords="align right">
+      <td>24</td>
+      <td>Ctrl + R</td>
+      <td>Align right</td>
+    </tr>
+    <!-- 25 -->
+    <tr data-keywords="insert hyperlink link">
+      <td>25</td>
+      <td>Ctrl + K</td>
+      <td>Insert hyperlink</td>
+    </tr>
+    <!-- 26 -->
+    <tr data-keywords="increase font size">
+      <td>26</td>
+      <td>Ctrl + Shift + &gt;</td>
+      <td>Increase font size</td>
+    </tr>
+    <!-- 27 -->
+    <tr data-keywords="decrease font size">
+      <td>27</td>
+      <td>Ctrl + Shift + &lt;</td>
+      <td>Decrease font size</td>
+    </tr>
+    <!-- 28 -->
+    <tr data-keywords="group objects">
+      <td>28</td>
+      <td>Ctrl + G</td>
+      <td>Group selected objects</td>
+    </tr>
+    <!-- 29 -->
+    <tr data-keywords="ungroup objects">
+      <td>29</td>
+      <td>Ctrl + Shift + G</td>
+      <td>Ungroup selected objects</td>
+    </tr>
+    <!-- 30 -->
+    <tr data-keywords="bring to front">
+      <td>30</td>
+      <td>Ctrl + Shift + ]</td>
+      <td>Bring to front</td>
+    </tr>
+    <!-- 31 -->
+    <tr data-keywords="send to back">
+      <td>31</td>
+      <td>Ctrl + Shift + [</td>
+      <td>Send to back</td>
+    </tr>
+    <!-- 32 -->
+    <tr data-keywords="zoom in">
+      <td>32</td>
+      <td>Alt + F6</td>
+      <td>Zoom in</td>
+    </tr>
+    <!-- 33 -->
+    <tr data-keywords="zoom out">
+      <td>33</td>
+      <td>Alt + Shift + F6</td>
+      <td>Zoom out</td>
+    </tr>
+    <!-- 34 -->
+    <tr data-keywords="spell check">
+      <td>34</td>
+      <td>F7</td>
+      <td>Spell check</td>
+    </tr>
+    <!-- 35 -->
+    <tr data-keywords="format painter">
+      <td>35</td>
+      <td>Ctrl + Shift + C</td>
+      <td>Copy formatting</td>
+    </tr>
+    <!-- 36 -->
+    <tr data-keywords="apply formatting">
+      <td>36</td>
+      <td>Ctrl + Shift + V</td>
+      <td>Paste formatting</td>
+    </tr>
+    <!-- 37 -->
+    <tr data-keywords="exit program">
+      <td>37</td>
+      <td>Alt + F4</td>
+      <td>Close PowerPoint</td>
+    </tr>
+    <!-- 38 -->
+    <tr data-keywords="open file explorer">
+      <td>38</td>
+      <td>Windows + E</td>
+      <td>Open File Explorer</td>
+    </tr>
+    <!-- 39 -->
+    <tr data-keywords="refresh slide sorter">
+      <td>39</td>
+      <td>F5</td>
+      <td>Refresh view</td>
+    </tr>
+    <!-- 40 -->
+    <tr data-keywords="show gridlines">
+      <td>40</td>
+      <td>Shift + F9</td>
+      <td>Toggle gridlines</td>
+    </tr>
+    <!-- 41 -->
+    <tr data-keywords="insert new comment">
+      <td>41</td>
+      <td>Ctrl + Alt + M</td>
+      <td>Insert new comment</td>
+    </tr>
+    <!-- 42 -->
+    <tr data-keywords="delete selected object">
+      <td>42</td>
+      <td>Delete</td>
+      <td>Delete selection</td>
+    </tr>
+    <!-- 43 -->
+    <tr data-keywords="move slide up">
+      <td>43</td>
+      <td>Ctrl + Up Arrow</td>
+      <td>Move slide up</td>
+    </tr>
+    <!-- 44 -->
+    <tr data-keywords="move slide down">
+      <td>44</td>
+      <td>Ctrl + Down Arrow</td>
+      <td>Move slide down</td>
+    </tr>
+    <!-- 45 -->
+    <tr data-keywords="switch windows">
+      <td>45</td>
+      <td>Ctrl + F6</td>
+      <td>Switch between presentations</td>
+    </tr>
+    <!-- 46 -->
+    <tr data-keywords="insert picture image">
+      <td>46</td>
+      <td>Alt + N, P</td>
+      <td>Insert picture</td>
+    </tr>
+    <!-- 47 -->
+    <tr data-keywords="insert shape object">
+      <td>47</td>
+      <td>Alt + N, S, H</td>
+      <td>Insert shape</td>
+    </tr>
+    <!-- 48 -->
+    <tr data-keywords="insert text box">
+      <td>48</td>
+      <td>Alt + N, X</td>
+      <td>Insert text box</td>
+    </tr>
+    <!-- 49 -->
+    <tr data-keywords="duplicate object">
+      <td>49</td>
+      <td>Ctrl + Drag</td>
+      <td>Duplicate object by dragging</td>
+    </tr>
+    <!-- 50 -->
+    <tr data-keywords="open help">
+      <td>50</td>
+      <td>F1</td>
+      <td>Open Help</td>
+    </tr>
+  </tbody>
+</table>
+<script src="script.js" defer></script>
+</body>
+</html>

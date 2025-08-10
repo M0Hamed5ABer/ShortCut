@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Excel Shortcuts</title>
+<link rel="stylesheet" href="style.css">
+<link rel="icon" href="flash.ico" type="image/x-icon" />
+</head>
+<body>
+<h1>Excel Shortcuts</h1>
+
+<input type="text" id="shortcutSearch" placeholder="Search for a shortcut...">
+
+<table id="shortcutsTable" border="1" style="border-collapse: collapse; width: 100%; text-align: left;">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>Shortcut</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr data-keywords="new workbook">
+            <td>1</td>
+            <td>Ctrl + N</td>
+            <td>Create a new workbook</td>
+        </tr>
+        <tr data-keywords="open workbook file">
+            <td>2</td>
+            <td>Ctrl + O</td>
+            <td>Open an existing workbook</td>
+        </tr>
+        <tr data-keywords="save workbook">
+            <td>3</td>
+            <td>Ctrl + S</td>
+            <td>Save the workbook</td>
+        </tr>
+        <tr data-keywords="print workbook">
+            <td>4</td>
+            <td>Ctrl + P</td>
+            <td>Print the workbook</td>
+        </tr>
+        <tr data-keywords="close workbook">
+            <td>5</td>
+            <td>Ctrl + W</td>
+            <td>Close the workbook</td>
+        </tr>
+        <tr data-keywords="cut text cell">
+            <td>6</td>
+            <td>Ctrl + X</td>
+            <td>Cut the selected cells</td>
+        </tr>
+        <tr data-keywords="copy cell">
+            <td>7</td>
+            <td>Ctrl + C</td>
+            <td>Copy the selected cells</td>
+        </tr>
+        <tr data-keywords="paste cell">
+            <td>8</td>
+            <td>Ctrl + V</td>
+            <td>Paste content</td>
+        </tr>
+        <tr data-keywords="undo last action">
+            <td>9</td>
+            <td>Ctrl + Z</td>
+            <td>Undo last action</td>
+        </tr>
+        <tr data-keywords="redo action">
+            <td>10</td>
+            <td>Ctrl + Y</td>
+            <td>Redo last action</td>
+        </tr>
+        <tr data-keywords="find search">
+            <td>11</td>
+            <td>Ctrl + F</td>
+            <td>Find content in the worksheet</td>
+        </tr>
+        <tr data-keywords="replace">
+            <td>12</td>
+            <td>Ctrl + H</td>
+            <td>Replace content</td>
+        </tr>
+        <tr data-keywords="bold text">
+            <td>13</td>
+            <td>Ctrl + B</td>
+            <td>Bold text</td>
+        </tr>
+        <tr data-keywords="italic text">
+            <td>14</td>
+            <td>Ctrl + I</td>
+            <td>Italic text</td>
+        </tr>
+        <tr data-keywords="underline text">
+            <td>15</td>
+            <td>Ctrl + U</td>
+            <td>Underline text</td>
+        </tr>
+        <tr data-keywords="new line cell">
+            <td>16</td>
+            <td>Alt + Enter</td>
+            <td>Start a new line in a cell</td>
+        </tr>
+        <tr data-keywords="autosum">
+            <td>17</td>
+            <td>Alt + =</td>
+            <td>Insert AutoSum formula</td>
+        </tr>
+        <tr data-keywords="insert hyperlink">
+            <td>18</td>
+            <td>Ctrl + K</td>
+            <td>Insert hyperlink</td>
+        </tr>
+        <tr data-keywords="select all">
+            <td>19</td>
+            <td>Ctrl + A</td>
+            <td>Select all cells</td>
+        </tr>
+        <tr data-keywords="go to cell">
+            <td>20</td>
+            <td>Ctrl + G</td>
+            <td>Go to a specific cell</td>
+        </tr>
+        <tr data-keywords="insert cell">
+            <td>21</td>
+            <td>Ctrl + Shift + Plus (+)</td>
+            <td>Insert new cell</td>
+        </tr>
+        <tr data-keywords="delete cell">
+            <td>22</td>
+            <td>Ctrl + Minus (-)</td>
+            <td>Delete selected cell</td>
+        </tr>
+        <tr data-keywords="hide column">
+            <td>23</td>
+            <td>Ctrl + 0</td>
+            <td>Hide selected column</td>
+        </tr>
+        <tr data-keywords="hide row">
+            <td>24</td>
+            <td>Ctrl + 9</td>
+            <td>Hide selected row</td>
+        </tr>
+        <tr data-keywords="insert current date">
+            <td>25</td>
+            <td>Ctrl + ;</td>
+            <td>Insert current date</td>
+        </tr>
+        <tr data-keywords="insert current time">
+            <td>26</td>
+            <td>Ctrl + Shift + ;</td>
+            <td>Insert current time</td>
+        </tr>
+        <tr data-keywords="move to top">
+            <td>27</td>
+            <td>Ctrl + Home</td>
+            <td>Go to start of worksheet</td>
+        </tr>
+        <tr data-keywords="move to bottom">
+            <td>28</td>
+            <td>Ctrl + End</td>
+            <td>Go to last used cell</td>
+        </tr>
+        <tr data-keywords="switch worksheets">
+            <td>29</td>
+            <td>Ctrl + Page Up</td>
+            <td>Switch to previous worksheet</td>
+        </tr>
+        <tr data-keywords="switch worksheets">
+            <td>30</td>
+            <td>Ctrl + Page Down</td>
+            <td>Switch to next worksheet</td>
+        </tr>
+        <tr data-keywords="create chart">
+            <td>31</td>
+            <td>Alt + F1</td>
+            <td>Create chart from selection</td>
+        </tr>
+        <tr data-keywords="save as">
+            <td>32</td>
+            <td>F12</td>
+            <td>Save as</td>
+        </tr>
+        <tr data-keywords="rename sheet">
+            <td>33</td>
+            <td>Alt + H + O + R</td>
+            <td>Rename worksheet</td>
+        </tr>
+        <tr data-keywords="format cells">
+            <td>34</td>
+            <td>Ctrl + 1</td>
+            <td>Open Format Cells dialog</td>
+        </tr>
+        <tr data-keywords="add filter">
+            <td>35</td>
+            <td>Ctrl + Shift + L</td>
+            <td>Add or remove filter</td>
+        </tr>
+        <tr data-keywords="group rows columns">
+            <td>36</td>
+            <td>Alt + Shift + Right Arrow</td>
+            <td>Group rows/columns</td>
+        </tr>
+        <tr data-keywords="ungroup rows columns">
+            <td>37</td>
+            <td>Alt + Shift + Left Arrow</td>
+            <td>Ungroup rows/columns</td>
+        </tr>
+        <tr data-keywords="insert table">
+            <td>38</td>
+            <td>Ctrl + T</td>
+            <td>Create a table</td>
+        </tr>
+        <tr data-keywords="move to next cell">
+            <td>39</td>
+            <td>Tab</td>
+            <td>Move to the next cell</td>
+        </tr>
+        <tr data-keywords="move to previous cell">
+            <td>40</td>
+            <td>Shift + Tab</td>
+            <td>Move to the previous cell</td>
+        </tr>
+        <tr data-keywords="open function dialog">
+            <td>41</td>
+            <td>Shift + F3</td>
+            <td>Insert function dialog</td>
+        </tr>
+        <tr data-keywords="refresh data">
+            <td>42</td>
+            <td>Alt + F5</td>
+            <td>Refresh selected data</td>
+        </tr>
+        <tr data-keywords="open go to special">
+            <td>43</td>
+            <td>Ctrl + G → Alt + S</td>
+            <td>Go To Special dialog</td>
+        </tr>
+        <tr data-keywords="toggle absolute reference">
+            <td>44</td>
+            <td>F4</td>
+            <td>Toggle absolute/relative cell reference</td>
+        </tr>
+        <tr data-keywords="insert comment">
+            <td>45</td>
+            <td>Shift + F2</td>
+            <td>Insert or edit a comment</td>
+        </tr>
+        <tr data-keywords="delete comment">
+            <td>46</td>
+            <td>Shift + F10 + M</td>
+            <td>Delete a comment</td>
+        </tr>
+        <tr data-keywords="zoom in">
+            <td>47</td>
+            <td>Ctrl + Mouse Wheel Up</td>
+            <td>Zoom in</td>
+        </tr>
+        <tr data-keywords="zoom out">
+            <td>48</td>
+            <td>Ctrl + Mouse Wheel Down</td>
+            <td>Zoom out</td>
+        </tr>
+        <tr data-keywords="insert worksheet">
+            <td>49</td>
+            <td>Shift + F11</td>
+            <td>Insert new worksheet</td>
+        </tr>
+        <tr data-keywords="delete worksheet">
+            <td>50</td>
+            <td>Alt + H + D + S</td>
+            <td>Delete worksheet</td>
+        </tr>
+    </tbody>
+</table>
+
+<script src="script.js" defer></script>
+</body>
+</html>

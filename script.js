@@ -1,123 +1,63 @@
-// function opensidebar(){
-//   document.getElementById("sidebar").classList.toggle("opensidebar");
-// }
+// Main Page Search (Program List)
+const programSearch = document.getElementById("programSearch");
+if (programSearch) {
+  programSearch.addEventListener("keyup", function () {
+    let filter = this.value.toLowerCase();
+    let sections = document.querySelectorAll(".program-list section");
 
-document.querySelectorAll(".card").forEach((cardSection) => {
-  const hero = cardSection.querySelector(".hero");
-  const originalBackground = hero.style.backgroundImage;
+    sections.forEach((section) => {
+      let links = section.querySelectorAll("a");
+      let matchFound = false;
 
-  const categoryCards = cardSection.querySelectorAll(".category-card");
+      links.forEach((link) => {
+        let text = link.textContent.toLowerCase();
+        if (text.includes(filter)) {
+          link.style.display = "block";
+          matchFound = true;
+        } else {
+          link.style.display = "none";
+        }
+      });
 
-  categoryCards.forEach((card) => {
-    const img = card.querySelector("img");
-
-    card.addEventListener("mouseenter", () => {
-      const imgSrc = img.getAttribute("src");
-      hero.style.backgroundImage = `url('${imgSrc}')`;
+      section.style.display = matchFound ? "block" : "none";
     });
+  });
+}
 
-    card.addEventListener("mouseleave", () => {
-      hero.style.backgroundImage = originalBackground;
+// Shortcut Page Search with hidden keywords
+const shortcutSearch = document.getElementById("shortcutSearch");
+if (shortcutSearch) {
+  shortcutSearch.addEventListener("keyup", function () {
+    let filter = this.value.toLowerCase();
+    let rows = document.querySelectorAll("#shortcutsTable tbody tr");
+
+    rows.forEach((row) => {
+      let text = (
+        row.textContent +
+        " " +
+        row.getAttribute("data-keywords")
+      ).toLowerCase();
+      row.style.display = text.includes(filter) ? "" : "none";
     });
   });
-});
-
-const mainPage = document.querySelector(".main_page");
-const sections = document.querySelectorAll(".card");
-let currentIndex = 0;
-
-// ازرار الكمبيوتر
-document.getElementById("nextBtn")?.addEventListener("click", () => {
-  if (currentIndex < sections.length - 1) {
-    currentIndex++;
-    updateSlide();
-  }
-});
-
-document.getElementById("prevBtn")?.addEventListener("click", () => {
-  if (currentIndex > 0) {
-    currentIndex--;
-    updateSlide();
-  }
-});
-
-function updateSlide() {
-  mainPage.style.transform = `translateX(-${currentIndex * 100}vw)`;
 }
 
-// ✅ دعم اللمس للموبايل
-let startX = 0;
-let endX = 0;
-
-mainPage.addEventListener("touchstart", (e) => {
-  startX = e.touches[0].clientX;
-});
-
-mainPage.addEventListener("touchend", (e) => {
-  endX = e.changedTouches[0].clientX;
-  handleSwipe();
-});
-
-function handleSwipe() {
-  const threshold = 80; // أقل مسافة سحب مطلوبة
-
-  if (startX - endX > threshold && currentIndex < sections.length - 1) {
-    // سحب لليسار
-    currentIndex++;
-    updateSlide();
-  } else if (endX - startX > threshold && currentIndex > 0) {
-    // سحب لليمين
-    currentIndex--;
-    updateSlide();
-  }
+// --- تحميل حالة الوضع المظلم عند فتح أي صفحة ---
+const savedDarkMode = localStorage.getItem("darkMode");
+if (savedDarkMode === "enabled") {
+  document.body.classList.add("dark-mode");
+} else {
+  document.body.classList.remove("dark-mode");
 }
 
-// sidebar
-const sidebar = document.getElementById("sidebar");
-const overlay = document.getElementById("overlay");
+// --- تفعيل زر التبديل إذا كان موجود ---
+const toggleDarkModeBtn = document.getElementById("toggleDarkMode");
+if (toggleDarkModeBtn) {
+  toggleDarkModeBtn.addEventListener("click", () => {
+    document.body.classList.toggle("dark-mode");
 
-function openSidebar() {
-  sidebar.classList.add("active");
-  overlay.classList.add("active");
-}
-
-function closeSidebar() {
-  sidebar.classList.remove("active");
-  overlay.classList.remove("active");
-
-  document.querySelectorAll(".sidebar li.show").forEach((li) => {
-    li.classList.remove("show");
+    // حفظ الحالة
+    const isDark = document.body.classList.contains("dark-mode");
+    localStorage.setItem("darkMode", isDark ? "enabled" : "disabled");
   });
 }
-
-function toggleSubMenu(a) {
-  const parentLi = a.closest("li");
-  parentLi.classList.toggle("show");
-}
-
-/***** Dark mode toggle *****/
-document.addEventListener("DOMContentLoaded", () => {
-  const enableDarkMode = () => {
-    document.body.classList.add("dark-mode");
-    localStorage.setItem("darkMode", "enabled");
-  };
-
-  const disableDarkMode = () => {
-    document.body.classList.remove("dark-mode");
-    localStorage.setItem("darkMode", "disabled");
-  };
-
-  // Check for dark mode preference in local storage
-  if (localStorage.getItem("darkMode") === "enabled") {
-    enableDarkMode();
-  }
-
-  // Toggle dark mode on button click
-  document.getElementById("toggle-dark-mode").addEventListener("click", () => {
-    if (document.body.classList.contains("dark-mode")) {
-      disableDarkMode();
-    } else {
-      enableDarkMode();
-    }
-  });
-});
